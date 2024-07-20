@@ -9,8 +9,9 @@ export default function TimerChallenge({ title, targetTime }) {
 
   const timeIsActive = timeRemainig > 0 && timeRemainig < targetTime * 1000;
 
-  if (timeRemainig <= 10) {
+  if (timeRemainig <= 0) {
     clearInterval(timer.current);
+    setTimeRemaining(targetTime * 1000);
     dialog.current.open(); 
   }
 
